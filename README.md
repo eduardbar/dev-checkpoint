@@ -13,8 +13,7 @@ Dev Checkpoint saves your mental context in 1 keystroke — and restores it in 3
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Tests](https://img.shields.io/badge/tests-62%20passing-brightgreen)](src/__tests__)
 
-<!-- DEMO GIF GOES HERE -->
-<!-- ![Dev Checkpoint Demo](https://raw.githubusercontent.com/eduardbar/dev-checkpoint/main/images/demo.gif) -->
+![Dev Checkpoint — Stop losing your train of thought](https://raw.githubusercontent.com/eduardbar/dev-checkpoint/main/images/og-twitter.png)
 
 </div>
 
