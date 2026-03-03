@@ -1,0 +1,137 @@
+{
+  "name": "dev-checkpoint",
+  "displayName": "Dev Checkpoint",
+  "description": "Capture your cognitive context at interruption points and resurface it instantly on return.",
+  "version": "0.1.0",
+  "publisher": "eduardbar",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eduardbar/dev-checkpoint.git"
+  },
+  "license": "MIT",
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#0d1117",
+    "theme": "dark"
+  },
+  "bugs": {
+    "url": "https://github.com/eduardbar/dev-checkpoint/issues"
+  },
+  "homepage": "https://github.com/eduardbar/dev-checkpoint#readme",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Productivity"
+  ],
+  "keywords": [
+    "productivity",
+    "focus",
+    "context",
+    "checkpoint",
+    "interruption",
+    "flow state",
+    "developer tools",
+    "cognitive",
+    "resume",
+    "save state"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onCommand:dev-checkpoint.capture",
+    "onView:dev-checkpoint.history"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "dev-checkpoint.capture",
+        "title": "Dev Checkpoint: Capture Context",
+        "icon": "$(bookmark)"
+      },
+      {
+        "command": "dev-checkpoint.restore",
+        "title": "Dev Checkpoint: Restore Context",
+        "icon": "$(history)"
+      },
+      {
+        "command": "dev-checkpoint.showHistory",
+        "title": "Dev Checkpoint: Show History",
+        "icon": "$(list-unordered)"
+      }
+    ],
+    "views": {
+      "explorer": [
+        {
+          "type": "webview",
+          "id": "dev-checkpoint.history",
+          "name": "Checkpoints",
+          "when": "workspaceFolderCount > 0"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "dev-checkpoint.capture",
+        "key": "ctrl+shift+m",
+        "mac": "cmd+shift+m",
+        "when": "editorFocus"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "dev-checkpoint.capture",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Dev Checkpoint",
+      "properties": {
+        "devCheckpoint.idleThresholdMinutes": {
+          "type": "number",
+          "default": 5,
+          "minimum": 1,
+          "maximum": 60,
+          "description": "Minutes of inactivity before auto-checkpoint triggers."
+        },
+        "devCheckpoint.maxCheckpoints": {
+          "type": "number",
+          "default": 50,
+          "minimum": 5,
+          "maximum": 500,
+          "description": "Maximum number of checkpoints to retain per workspace."
+        },
+        "devCheckpoint.autoCheckpoint": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically create checkpoints on idle detection."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "vscode:prepublish": "node esbuild.js --production",
+    "package": "vsce package",
+    "lint": "eslint src --ext ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@types/vscode": "^1.85.0",
+    "@vitest/coverage-v8": "^4.0.18",
+    "esbuild": "^0.20.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.3.0",
+    "vitest": "^4.0.18"
+  }
+}
