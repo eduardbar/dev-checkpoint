@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#161b22;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0078d4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0ea5e9;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="30" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="640" fill="url(#bgGrad)"/>
+
+  <!-- Ambient glows -->
+  <ellipse cx="200" cy="200" rx="300" ry="300" fill="#0078d4" opacity="0.04" filter="url(#softglow)"/>
+  <ellipse cx="1100" cy="480" rx="300" ry="280" fill="#0ea5e9" opacity="0.04" filter="url(#softglow)"/>
+
+  <!-- Top border accent -->
+  <rect x="0" y="0" width="1280" height="3" fill="url(#blueGrad)"/>
+
+  <!-- Center layout -->
+  <!-- Icon -->
+  <g transform="translate(560, 100)">
+    <rect x="0" y="0" width="100" height="100" rx="22" fill="#0078d4" opacity="0.12"/>
+    <rect x="0" y="0" width="100" height="100" rx="22" fill="none" stroke="#0078d4" stroke-width="1.5" opacity="0.5"/>
+    <path d="M26 20 L74 20 L74 80 L50 62 L26 80 Z" fill="url(#blueGrad)" filter="url(#glow)"/>
+    <circle cx="74" cy="20" r="9" fill="white" opacity="0.95"/>
+  </g>
+
+  <!-- Title -->
+  <text x="640" y="252" font-family="'Segoe UI', -apple-system, sans-serif" font-size="56" font-weight="800" fill="white" text-anchor="middle" letter-spacing="-2">Dev Checkpoint</text>
+
+  <!-- Subtitle -->
+  <text x="640" y="300" font-family="'Segoe UI', -apple-system, sans-serif" font-size="22" fill="#8b949e" text-anchor="middle">Stop losing your train of thought to interruptions</text>
+
+  <!-- Divider -->
+  <line x1="440" y1="340" x2="840" y2="340" stroke="#30363d" stroke-width="1"/>
+
+  <!-- Stats row -->
+  <g text-anchor="middle">
+    <!-- Stat 1 -->
+    <text x="360" y="400" font-family="'Segoe UI', -apple-system, sans-serif" font-size="48" font-weight="800" fill="#0078d4" filter="url(#glow)">23 min</text>
+    <text x="360" y="428" font-family="'Segoe UI', -apple-system, sans-serif" font-size="15" fill="#8b949e">lost per interruption</text>
+
+    <!-- Arrow -->
+    <text x="640" y="405" font-family="'Segoe UI', sans-serif" font-size="36" fill="#30363d">→</text>
+
+    <!-- Stat 2 -->
+    <text x="920" y="400" font-family="'Segoe UI', -apple-system, sans-serif" font-size="48" font-weight="800" fill="#3fb950" filter="url(#glow)">3 sec</text>
+    <text x="920" y="428" font-family="'Segoe UI', -apple-system, sans-serif" font-size="15" fill="#8b949e">to restore with Dev Checkpoint</text>
+  </g>
+
+  <!-- Feature pills -->
+  <g transform="translate(640, 490)" text-anchor="middle">
+    <!-- Pill 1 -->
+    <rect x="-340" y="0" width="140" height="34" rx="17" fill="#0d1117" stroke="#0078d4" stroke-width="1"/>
+    <text x="-270" y="22" font-family="'Segoe UI', sans-serif" font-size="13" fill="#0078d4">🔖 Zero cloud</text>
+
+    <!-- Pill 2 -->
+    <rect x="-170" y="0" width="150" height="34" rx="17" fill="#0d1117" stroke="#3fb950" stroke-width="1"/>
+    <text x="-95" y="22" font-family="'Segoe UI', sans-serif" font-size="13" fill="#3fb950">⚡ Zero setup</text>
+
+    <!-- Pill 3 -->
+    <rect x="-0" y="0" width="150" height="34" rx="17" fill="#0d1117" stroke="#8b949e" stroke-width="1"/>
+    <text x="75" y="22" font-family="'Segoe UI', sans-serif" font-size="13" fill="#8b949e">🔒 100% offline</text>
+
+    <!-- Pill 4 -->
+    <rect x="170" y="0" width="150" height="34" rx="17" fill="#0d1117" stroke="#da3633" stroke-width="1"/>
+    <text x="245" y="22" font-family="'Segoe UI', sans-serif" font-size="13" fill="#da3633">❤️ Open source</text>
+  </g>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="608" width="1280" height="32" fill="#161b22"/>
+  <text x="640" y="629" font-family="'Segoe UI', sans-serif" font-size="13" fill="#8b949e" text-anchor="middle">github.com/eduardbar/dev-checkpoint · marketplace.visualstudio.com/items?itemName=eduardbar.dev-checkpoint</text>
+</svg>

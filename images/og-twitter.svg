@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="628" viewBox="0 0 1200 628">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#161b22;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1c2128;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#21262d;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0078d4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0ea5e9;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="20" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="628" fill="url(#bgGrad)"/>
+
+  <!-- Subtle grid lines -->
+  <g stroke="#1c2128" stroke-width="1" opacity="0.6">
+    <line x1="0" y1="157" x2="1200" y2="157"/>
+    <line x1="0" y1="314" x2="1200" y2="314"/>
+    <line x1="0" y1="471" x2="1200" y2="471"/>
+    <line x1="300" y1="0" x2="300" y2="628"/>
+    <line x1="600" y1="0" x2="600" y2="628"/>
+    <line x1="900" y1="0" x2="900" y2="628"/>
+  </g>
+
+  <!-- Glow accent top-left -->
+  <ellipse cx="120" cy="120" rx="200" ry="200" fill="#0078d4" opacity="0.06" filter="url(#softglow)"/>
+
+  <!-- Glow accent bottom-right -->
+  <ellipse cx="1100" cy="520" rx="250" ry="200" fill="#0078d4" opacity="0.05" filter="url(#softglow)"/>
+
+  <!-- Left side — Icon + branding -->
+  <g transform="translate(100, 180)">
+    <!-- Icon background -->
+    <rect x="0" y="0" width="96" height="96" rx="20" fill="url(#blueGrad)" opacity="0.15"/>
+    <rect x="0" y="0" width="96" height="96" rx="20" fill="none" stroke="#0078d4" stroke-width="1.5" opacity="0.4"/>
+
+    <!-- Bookmark icon -->
+    <path d="M28 18 L68 18 L68 78 L48 60 L28 78 Z" fill="url(#blueGrad)" filter="url(#glow)"/>
+    <!-- Dot indicator -->
+    <circle cx="68" cy="18" r="8" fill="white" opacity="0.95"/>
+
+    <!-- Product name -->
+    <text x="0" y="130" font-family="'Segoe UI', -apple-system, sans-serif" font-size="42" font-weight="700" fill="white" letter-spacing="-1">Dev Checkpoint</text>
+
+    <!-- Tagline -->
+    <text x="0" y="170" font-family="'Segoe UI', -apple-system, sans-serif" font-size="20" fill="#8b949e" letter-spacing="0">Stop losing your train of thought.</text>
+  </g>
+
+  <!-- Divider -->
+  <line x1="100" y1="430" x2="750" y2="430" stroke="#30363d" stroke-width="1"/>
+
+  <!-- Stat left -->
+  <text x="100" y="480" font-family="'Segoe UI', -apple-system, sans-serif" font-size="52" font-weight="800" fill="#0078d4" filter="url(#glow)">23 min</text>
+  <text x="100" y="510" font-family="'Segoe UI', -apple-system, sans-serif" font-size="16" fill="#8b949e">lost after every interruption</text>
+
+  <!-- Stat right -->
+  <text x="340" y="480" font-family="'Segoe UI', -apple-system, sans-serif" font-size="52" font-weight="800" fill="#3fb950">3 sec</text>
+  <text x="340" y="510" font-family="'Segoe UI', -apple-system, sans-serif" font-size="16" fill="#8b949e">to restore with Dev Checkpoint</text>
+
+  <!-- Right side — Feature card -->
+  <rect x="820" y="80" width="310" height="468" rx="16" fill="url(#cardGrad)" stroke="#30363d" stroke-width="1"/>
+
+  <!-- Card header -->
+  <rect x="820" y="80" width="310" height="56" rx="16" fill="#21262d"/>
+  <rect x="820" y="112" width="310" height="24" fill="#21262d"/>
+  <circle cx="856" cy="108" r="7" fill="#ff5f57"/>
+  <circle cx="880" cy="108" r="7" fill="#febc2e"/>
+  <circle cx="904" cy="108" r="7" fill="#28c840"/>
+  <text x="940" y="113" font-family="'Segoe UI Mono', 'Courier New', monospace" font-size="13" fill="#8b949e">checkpoint.json</text>
+
+  <!-- Code content -->
+  <g font-family="'Segoe UI Mono', 'Courier New', monospace" font-size="13">
+    <text x="844" y="165" fill="#8b949e">// captured context</text>
+    <text x="844" y="190" fill="#79c0ff">"branch"</text>
+    <text x="944" y="190" fill="#c9d1d9">: </text>
+    <text x="958" y="190" fill="#a5d6ff">"fix/jwt-refresh"</text>
+    <text x="844" y="215" fill="#79c0ff">"activeFile"</text>
+    <text x="964" y="215" fill="#c9d1d9">: </text>
+    <text x="978" y="215" fill="#a5d6ff">"auth/middleware"</text>
+    <text x="844" y="240" fill="#79c0ff">"cursorLine"</text>
+    <text x="960" y="240" fill="#c9d1d9">: </text>
+    <text x="974" y="240" fill="#79c0ff">47</text>
+    <text x="844" y="265" fill="#79c0ff">"symbol"</text>
+    <text x="924" y="265" fill="#c9d1d9">: </text>
+    <text x="938" y="265" fill="#a5d6ff">"validateJWT"</text>
+    <text x="844" y="290" fill="#79c0ff">"todos"</text>
+    <text x="914" y="290" fill="#c9d1d9">: [</text>
+    <text x="844" y="315" fill="#a5d6ff">  "Fix token expiry"</text>
+    <text x="844" y="340" fill="#c9d1d9">]</text>
+
+    <!-- Narrative -->
+    <rect x="836" y="360" width="286" height="70" rx="8" fill="#0d1117" stroke="#0078d4" stroke-width="1" opacity="0.8"/>
+    <text x="848" y="381" fill="#8b949e" font-size="11">narrative</text>
+    <text x="848" y="400" fill="#e6edf3" font-size="12">"You were fixing JWT</text>
+    <text x="848" y="418" fill="#e6edf3" font-size="12">refresh token rotation..."</text>
+  </g>
+
+  <!-- Bottom badges -->
+  <g transform="translate(836, 450)">
+    <rect x="0" y="0" width="80" height="24" rx="12" fill="#0d1117" stroke="#3fb950" stroke-width="1"/>
+    <text x="40" y="16" font-family="'Segoe UI', sans-serif" font-size="11" fill="#3fb950" text-anchor="middle">Zero cloud</text>
+
+    <rect x="88" y="0" width="76" height="24" rx="12" fill="#0d1117" stroke="#0078d4" stroke-width="1"/>
+    <text x="126" y="16" font-family="'Segoe UI', sans-serif" font-size="11" fill="#0078d4" text-anchor="middle">Zero deps</text>
+
+    <rect x="172" y="0" width="90" height="24" rx="12" fill="#0d1117" stroke="#8b949e" stroke-width="1"/>
+    <text x="217" y="16" font-family="'Segoe UI', sans-serif" font-size="11" fill="#8b949e" text-anchor="middle">Open Source</text>
+  </g>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="600" width="1200" height="28" fill="#161b22"/>
+  <text x="100" y="619" font-family="'Segoe UI', sans-serif" font-size="13" fill="#8b949e">marketplace.visualstudio.com</text>
+  <text x="1100" y="619" font-family="'Segoe UI', sans-serif" font-size="13" fill="#8b949e" text-anchor="end">github.com/eduardbar/dev-checkpoint</text>
+</svg>
